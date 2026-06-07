@@ -1,8 +1,10 @@
 #include "listas.h"
+#include "pilas.h"
 
 // Ejercicio 1: Actualizar deudas
 void actualizarDeudas(PunteroNodo *deudas, PunteroNodo *deudasActualizadas){
     int montoOriginal, montoActualizado;
+
     PunteroNodo aux;
     crearLista(&aux);
 
@@ -26,27 +28,23 @@ void actualizarDeudas(PunteroNodo *deudas, PunteroNodo *deudasActualizadas){
     *deudas = aux;
 }
 
-
-#include "pilas.h"
-
 // Ejercicio 2: Cantidad de novelas por código
 void novelas(PunteroNodo *novelas){
     PunteroNodo aux;
     crearPila(&aux);
-
     int codigo;
     int contadores[5] = {0};
 
     while(!esVacia(*novelas)){
         sacarElemento(novelas, &codigo);
-
+        
         if(codigo == 0001){
             contadores[1]++;
-        } else if(codigo == 0002){
+        } else if (codigo == 0002){
             contadores[2]++;
-        } else if(codigo == 0003){
+        } else if (codigo == 0003){
             contadores[3]++;
-        } else if(codigo == 0004){
+        } else if (codigo == 0004){
             contadores[4]++;
         }
 
